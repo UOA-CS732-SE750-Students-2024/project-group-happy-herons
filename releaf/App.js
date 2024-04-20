@@ -1,51 +1,53 @@
-// import React, { useEffect, useState } from 'react';
-// import { SafeAreaView, Text, View, FlatList } from 'react-native';
-// import { db } from './firebaseConfig';
-// import { doc, setDoc, collection, getDocs } from 'firebase/firestore';
+/* firebase 数据库连接使用
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, Text, View, FlatList } from 'react-native';
+import { db } from './firebaseConfig';
+import { doc, setDoc, collection, getDocs } from 'firebase/firestore';
 
 
-// //向数据库中新增数据
-// // async function quickstartAddData(db) {
-// //   const usersCollection = collection(db, 'users');
-// //   const docRef = doc(usersCollection, 'alovelace');
-// //   await setDoc(docRef, {
-// //     first: 'Ada',
-// //     last: 'Lovelace',
-// //     born: 1815
-// //   });
-// //   console.log('Data added successfully');
-// // }
-// //查询数据
-// async function fetchUsers(db) {
+//向数据库中新增数据
+// async function quickstartAddData(db) {
 //   const usersCollection = collection(db, 'users');
-//   const snapshot = await getDocs(usersCollection);
-//   const userList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-//   return userList;
+//   const docRef = doc(usersCollection, 'alovelace');
+//   await setDoc(docRef, {
+//     first: 'Ada',
+//     last: 'Lovelace',
+//     born: 1815
+//   });
+//   console.log('Data added successfully');
 // }
+//查询数据
+async function fetchUsers(db) {
+  const usersCollection = collection(db, 'users');
+  const snapshot = await getDocs(usersCollection);
+  const userList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  return userList;
+}
 
-// export default function App() {
-//   const [users, setUsers] = useState([]);
+export default function App() {
+  const [users, setUsers] = useState([]);
 
-//   useEffect(() => {
-//     // quickstartAddData(db).catch(console.error);
-//     fetchUsers(db).then(setUsers).catch(console.error);
-//   }, []);
+  useEffect(() => {
+    // quickstartAddData(db).catch(console.error);
+    fetchUsers(db).then(setUsers).catch(console.error);
+  }, []);
 
-//   return (
-//     <SafeAreaView className="flex-1 items-center justify-center">
-//       <Text className="font-semibold text-blue-500 text-[30px]">Let's get started!</Text>
-//       <FlatList
-//         data={users}
-//         keyExtractor={item => item.id}
-//         renderItem={({ item }) => (
-//           <View style={{ margin: 10 }}>
-//             <Text style={{ color: 'black', fontSize: 18 }}>{item.first} {item.last} (Born {item.born})</Text>
-//           </View>
-//         )}
-//       />
-//     </SafeAreaView>
-//   );
-// }
+  return (
+    <SafeAreaView className="flex-1 items-center justify-center">
+      <Text className="font-semibold text-blue-500 text-[30px]">Let's get started!</Text>
+      <FlatList
+        data={users}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <View style={{ margin: 10 }}>
+            <Text style={{ color: 'black', fontSize: 18 }}>{item.first} {item.last} (Born {item.born})</Text>
+          </View>
+        )}
+      />
+    </SafeAreaView>
+  );
+}
+*/
 
 
 import React, { useState, useEffect } from 'react';

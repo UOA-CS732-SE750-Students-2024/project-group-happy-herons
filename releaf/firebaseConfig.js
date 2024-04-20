@@ -1,3 +1,4 @@
+// firebase 数据库配置，mongodb不用管
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";

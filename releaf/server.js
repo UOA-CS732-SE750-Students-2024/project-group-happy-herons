@@ -1,3 +1,7 @@
+//npm install express mongoose body-parser cors 运行前安装依赖
+// node server.js 运行服务器，启动服务器后再启动主程序
+
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
