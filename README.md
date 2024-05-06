@@ -53,34 +53,73 @@ The TensorFlow.js model is used within the React Native app to classify images o
 
 - The model is pre-trained and bundled with the app, enabling instant image processing and classification.
 
-```
+The model is loaded asynchronolously when the app starts and the useModel hook (as shown below) initializes TensorFlow.js, loads the model from local assets, and sets up the model for use in the app.
+```jsx
 import * as tf from "@tensorflow/tfjs";
 import { bundleResourceIO } from "@tensorflow/tfjs-react-native";
-
 export const useModel = () => {
   const [model, setModel] = useState(null);
-
   useEffect(() => {
     async function loadModel() {
       try {
         await tf.ready();
-        console.log("TF ready");
         const modelJson = require("../assets/model/model.json");
         const modelWeights = [
           require("../assets/model/group1-shard1of11.bin"),
         ];
-        const loadedModel = await tf.loadGraphModel(
-          bundleResourceIO(modelJson, modelWeights)
-        );
+        const loadedModel = await tf.loadGraphModel(bundleResourceIO(modelJson, modelWeights));
         setModel(loadedModel);
-        console.log("Model loaded successfully.");
       } catch (error) {
         console.error("Failed to load the model:", error);
-      }
-    }
+      } }
     loadModel();
   }, []);
 ```
+#### Online Mode
+
+In online mode, the application uses the OpenAI GPT-4 Turbo model to provide detailed disposal instructions for identified items. This feature requires an internet connection and utilizes the ChatGPT API to process images and return actionable information based on the image content.
+
+The function constructs an HTTP POST request using `axios` with a set of headers including the `API key`. The request payload specifies that the model should treat the incoming image URL (embedded as a base64 string) and provide disposal instructions based on predefined criteria.
+
+
+To use this function, pass a base64 encoded image to sendImageToOpenAI. It returns a JSON response containing the appropriate disposal method and brief instructions, formatted as specified as shown in below code.
+
+```jsx
+import axios from 'axios';
+
+async function sendImageToOpenAI(imageBase64) {
+  if (!imageBase64) {
+    throw new Error("No image provided");
+  };
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${process.env.OPEN_AI_API_KEY}` 
+  };
+  const payload = {
+    model: "gpt-4-turbo",
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "text",
+            text: "Provide disposal instructions for the item shown in the picture.",
+          },
+          {
+            type: "image_url",
+            image_url: `data:image/jpeg;base64,${imageBase64}`
+          }],},],
+    max_tokens: 100
+  };
+  try {
+    const response = await axios.post('https://api.openai.com/v1/chat/completions', payload, { headers });
+    return response.data;
+  } catch (error) {
+  };
+};
+```
+
+
 ## Project Management
   
 ### Team Collaboration and Meetings
