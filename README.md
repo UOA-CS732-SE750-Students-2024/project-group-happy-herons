@@ -2,6 +2,34 @@
 <br>
 <br>
 
+
+# Technologies Used
+
+## Backend
+
+**Framework:**
+
+- **Express.js**: A versatile Node.js web application framework used to set up servers, manage routing, and handle middleware, suitable for both web and mobile applications.
+
+**Libraries:**
+
+- **Mongoose**: A MongoDB ODM for Node.js that handles data relationships, schema validation, and data translation between code and MongoDB.
+- **dotenv**: Loads environment variables from a `.env` file into `process.env`, essential for secure and scalable configuration management.
+- **body-parser**: Parses incoming request bodies, making JSON data available under `req.body`, crucial for handling JSON requests effectively.
+- **CORS**: Provides middleware to enable or restrict resource requests based on their origin, crucial for web application security and functionality.
+
+## Database
+
+- MongoDB Atlas:A fully managed NoSQL cloud database service that significantly simplifies database management.
+
+
+
+<br>
+<br>
+
+
+
+
 # Deployed Solution
 
 ## **Mobile Application Deployment**
@@ -104,6 +132,9 @@ Our database choice is MongoDB Atlas, a fully managed cloud database service tha
 
 
 
+
+<br>
+<br>
 
 
 
