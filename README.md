@@ -58,6 +58,7 @@ Your team members are:
 ### Task Management
 
 - Task Assignment: Tasks were assigned during our first couple of weekly meetings based on team members' skills and learning goals. The  details can be found on our projectManager board, which reflects the current status of each task, including 'To Do,' 'Doing,' and 'Done.'
+- ![](./group-image/board.png)
 - Progress Tracking: Progress was tracked using ProjectManager, where team members regularly updated tasks.
 
 ### Quality Assurance
