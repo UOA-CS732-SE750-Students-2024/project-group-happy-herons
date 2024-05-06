@@ -43,6 +43,8 @@ The **'BinScreen.test.js'** file primarily tests the **'BinScreen'** component's
   - **Food Scraps Bin Test**: Checks if the food scraps bin displays the appropriate items when selected.
   - **General Rubbish Bin Test**: Ensures the general rubbish bin displays the correct items when selected.
 
+
+《----------liyan update   Deployed Solution部分已经整合到database分支
 ## Deployed Solution
 ### Expo EAS
 The official documentation ([EXPO EAS Documentation](https://docs.expo.dev/eas/))
