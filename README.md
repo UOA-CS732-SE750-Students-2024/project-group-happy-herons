@@ -44,7 +44,55 @@ The **'BinScreen.test.js'** file primarily tests the **'BinScreen'** component's
 
 ## Deployed Solution
 ### Expo EAS
-The official documentation ([EXPO EAS Documentation](https://docs.expo.dev/eas/)
+The official documentation ([EXPO EAS Documentation](https://docs.expo.dev/eas/))
+
+#### What is Expo EAS
+Expo Application Services (EAS) is a deeply integrated service platform provided by the team behind Expo, offering cloud services for building, deploying, and releasing mobile applications built with Expo and React Native.
+- **Features**:
+  - **EAS Build**: Supports cloud builds for iOS and Android applications.
+  - **EAS Submit**: Submits apps to the App Store and Google Play.
+  - **EAS Update**: Provides instant app updates.
+  - **EAS Metadata**: Simplifies metadata management.
+
+#### Configuring EAS Build
+- **1.Install the latest EAS CLI**
+```
+npm install -g eas-cli
+```
+- **2.Log in to your Expo account:**
+```
+eas login
+```
+- **3.Initialize the project configuration file:**
+```
+eas build:configure
+```
+- **4.Build the application:**
+```
+eas build --platform ios
+eas build --platform android
+```
+Note: If this is your first time building an iOS application, you may need to set up relevant **Apple developer certificate information**. EAS CLI will guide you through these steps.
+
+- **5.Using EAS Submit:**
+  - **Configure credentials**:
+    - **iOS**: App Store Connect API Key.
+    - **Android**: Google Play Service Account JSON.
+  - **Submit the application**:
+```
+eas submit -p ios --apple-id <your-apple-id> --asc-app-id <app-store-connect-app-id>
+eas submit -p android --service-account-file <google-play-service-account-json>
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
