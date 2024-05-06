@@ -74,7 +74,7 @@ eas build --platform android
 ```
 Note: If this is your first time building an iOS application, you may need to set up relevant **Apple developer certificate information**. EAS CLI will guide you through these steps.
 
-#### 5.Using EAS Submit: 
+#### Using EAS Submit: 
 - **Configure credentials**:
   - **iOS**: App Store Connect API Key.
   - **Android**: Google Play Service Account JSON.
