@@ -13,7 +13,7 @@
 
 ### Components
 - **FetchData.js**: **Fetch API**, Used for making asynchronous HTTP requests to retrieve data from the server.
-- 
+
 
 ## Testing
 
@@ -37,8 +37,8 @@ The **'BinScreen.test.js'** file primarily tests the **'BinScreen'** component's
 
 - **Mocks**: The **'getWasteBinData'** function is mocked to return predictable data for testing purposes.
 - **Tests**:
-  - **Display Items Test**: Ensures that selecting a bin button displays the appropriate items.
-  - **"No, Thanks" Section Test**: Confirms that the "No, Thanks" section shows correct items for the selected bin.
+  - **Recycling "Yes, Please" Display Items Test**: Ensures that selecting a bin button displays the appropriate items.
+  - **Recycling "No, Thanks" Display Items Test**: Confirms that the "No, Thanks" section shows correct items for the selected bin.
   - **Food Scraps Bin Test**: Checks if the food scraps bin displays the appropriate items when selected.
   - **General Rubbish Bin Test**: Ensures the general rubbish bin displays the correct items when selected.
 
