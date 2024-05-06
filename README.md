@@ -78,16 +78,9 @@ eas build --platform android
 ```
 Note: If this is your first time building an iOS application, you may need to set up relevant **Apple developer certificate information**. EAS CLI will guide you through these steps.
 
-#### Using EAS Submit: 
-- **Configure credentials**:
-  - **iOS**: App Store Connect API Key.
-  - **Android**: Google Play Service Account JSON.
-- **Submit the application**:
-```
-eas submit -p ios --apple-id <your-apple-id> --asc-app-id <app-store-connect-app-id>
-eas submit -p android --service-account-file <google-play-service-account-json>
-```
-
+#### EAS Submit: 
+- **Submit to the Google Play Store**: [Submit to the Google Play Store](https://docs.expo.dev/submit/android/)
+- **Submit to the Apple App Store**: [Submit to the Apple App Store](https://docs.expo.dev/submit/ios/)
 
 
 
