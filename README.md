@@ -1,6 +1,7 @@
 # COMPSCI 732 / SOFTENG 750 project - Team Happy Herons
 <br>
 <br>
+liyan update-----》
 
 ## Technologies Used
 ### Frontend
@@ -88,12 +89,7 @@ eas submit -p android --service-account-file <google-play-service-account-json>
 
 
 
-
-
-
-
-
-
+《----------liyan update
 
 
 ### 04/16/2024 description
