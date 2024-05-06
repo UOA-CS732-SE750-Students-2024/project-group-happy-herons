@@ -56,6 +56,9 @@ Expo Application Services (EAS) is a deeply integrated service platform provided
   - **EAS Metadata**: Simplifies metadata management.
 
 #### Configuring EAS Build
+这段话看看是否需要修改下，说明我们计划在ios运行，但是因为开发者账号限制，只列出步骤
+For our current React Native project, we're primarily targeting iOS and planning to use Expo EAS for building and packaging. However, due to limitations with our Apple Developer Account, we couldn't finalize the packaging process. Below are the steps we intended to follow for the build:
+
 - **1.Install the latest EAS CLI**
 ```
 npm install -g eas-cli
