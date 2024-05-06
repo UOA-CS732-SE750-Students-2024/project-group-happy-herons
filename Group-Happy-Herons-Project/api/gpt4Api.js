@@ -1,16 +1,16 @@
-const express = require("express");
-const axios = require("axios");
-const router = express.Router();
-require('dotenv').config();
+import axios from "axios";
 
-router.post("/", async (req, res) => {
-  const { image } = req.body;
-  console.log(image);
-  
-  console.log(process.env.OPEN_AI_API_KEY)
-  if (!image) {
-    return res.send("No image provided").status(400);
+
+// const express = require("express");
+// const axios = require("axios");
+// const router = express.Router();
+// require('dotenv').config();
+
+async function sendImageToOpenAI(imageBase64) {
+  if (!imageBase64) {
+    throw new Error("No image provided");
   };
+
 
   const headers = {
     'Content-Type': 'application/json',
@@ -25,12 +25,12 @@ router.post("/", async (req, res) => {
         content: [
           {
             type: "text",
-            text: "Based on the lates rules to get rid of rubbish in New Zealand, please list the steps to get rid of this item in the picture with only three short and concise bullet points. Don't give the source of your answer.",
+            text: "You are a recycling AI assistant. Please provide disposal instructions for the item shown in the picture according to the latest recycling rules in New Zealand. Format your response in two parts, separated by '*'. The first part should contain only the name of the appropriate disposal method, chosen from 'Rubbish Bin', 'Recycling Bin', 'Kitchen Bin', or other specific options such as 'Special Recycling' or 'Donation Centers'. The second part should include very brief instructions, not exceeding 25 words, on how to properly dispose of the item using the selected method. Separate each sentence in the second part with a new line",
           },
           {
             type: "image_url",
             image_url: {
-                "url": `data:image/jpeg;base64,${image}`,
+                "url": `data:image/jpeg;base64,${imageBase64}`,
                 "detail": "low"
             }
           }
@@ -42,15 +42,16 @@ router.post("/", async (req, res) => {
 
   try {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', payload, { headers });
-    res.json(response.data);
+    return response.data;
     
   } catch (error) {
     console.log(error)
     console.log('Error communicating with openAI', error.message);
-    res.status(500).json({ error: error.message, message: "Failed to process the image with Open AI."})
+    throw error;
     
   };
 
-});
+};
 
-module.exports = router;
+export default sendImageToOpenAI;
+
