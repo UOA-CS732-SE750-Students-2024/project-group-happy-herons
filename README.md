@@ -42,9 +42,45 @@ Your team members are:
 
 ## Technologies
 ### Image Recognition and Information Retrieval
-This section of our project describes the integration of TensorFlow.js with React Native for offline image recognition, and the utilization of the ChatGPT API for online information retrieval. The functionality facilitates rubbish classification and provides users with detailed information about identified items.
 
+This section of our project describes the integration of TensorFlow.js with React Native for offline image recognition, and the utilization of the ChatGPT API for online information retrieval. The functionality facilitates rubbish classification and provides users with detailed information about identified items.And the modes are controlled by users and internet connections.
 
+### Offline Mode
+
+The TensorFlow.js model is used within the React Native app to classify images of rubbish directly on the user's device, operating fully offline.
+
+- TensorFlow.js is integrated using the @tensorflow/tfjs-react-native adapter, allowing the machine learning model to run directly on mobile devices without needing internet access.
+
+- The model is pre-trained and bundled with the app, enabling instant image processing and classification.
+
+```
+import * as tf from "@tensorflow/tfjs";
+import { bundleResourceIO } from "@tensorflow/tfjs-react-native";
+
+export const useModel = () => {
+  const [model, setModel] = useState(null);
+
+  useEffect(() => {
+    async function loadModel() {
+      try {
+        await tf.ready();
+        console.log("TF ready");
+        const modelJson = require("../assets/model/model.json");
+        const modelWeights = [
+          require("../assets/model/group1-shard1of11.bin"),
+        ];
+        const loadedModel = await tf.loadGraphModel(
+          bundleResourceIO(modelJson, modelWeights)
+        );
+        setModel(loadedModel);
+        console.log("Model loaded successfully.");
+      } catch (error) {
+        console.error("Failed to load the model:", error);
+      }
+    }
+    loadModel();
+  }, []);
+```
 ## Project Management
   
 ### Team Collaboration and Meetings
