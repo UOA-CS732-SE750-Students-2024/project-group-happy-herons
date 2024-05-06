@@ -40,6 +40,10 @@ Your team members are:
 
 ![](./group-image/Happy%20Herons.webp)
 
+## Technologies
+### Image Recognition and Information Retrieval
+This section of our project describes the integration of TensorFlow.js with React Native for offline image recognition, and the utilization of the ChatGPT API for online information retrieval. The functionality facilitates rubbish classification and provides users with detailed information about identified items.
+
 
 ## Project Management
   
