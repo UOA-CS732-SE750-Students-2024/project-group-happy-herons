@@ -45,7 +45,40 @@ Your team members are:
 
 This section of our project describes the integration of TensorFlow.js with React Native for offline image recognition, and the utilization of the ChatGPT API for online information retrieval. The functionality facilitates rubbish classification and provides users with detailed information about identified items.And the modes are controlled by users and internet connections.
 
-### Offline Mode
+#### Image Selection Process
+
+Before processing any images for classification, users must select an image either from their device's camera or from their photo library. This functionality is managed by the UploadOptions component and uses  `expo-image-picker` library to facilitate image capturing and selection.
+
+- Camera Access: Allows users to take a new photo using their device's camera.
+- Library Access: Users can select an existing photo from their device's media library.
+- Permissions: Automatically requests and checks necessary permissions for camera and library access.
+
+***This example demonstrate how to use `launchCameraAsync` method to capture an image,request permissions if necessary, and handle the image data***
+
+```jsx
+import {launchCameraAsync,useCameraPermissions,PermissionStatus,} from "expo-image-picker";
+  async function takeImageHandler() {
+    const hasPermission = await verifyPermissions();
+    if (!hasPermission) {
+      return;
+    }
+    const image = await launchCameraAsync({
+      allowsEditing: true,
+      aspect: [16, 9],
+      quality: 0.85,
+      base64: true,
+    });
+    if (!image.canceled) {
+      onTakeImage(image.assets[0].uri, image.assets[0].base64);
+      setPickedImage(image.assets[0].uri);
+    }
+  }
+```
+
+
+
+#### Offline Mode
+
 
 The TensorFlow.js model is used within the React Native app to classify images of rubbish directly on the user's device, operating fully offline.
 
