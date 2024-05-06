@@ -82,7 +82,7 @@ import {launchCameraAsync,useCameraPermissions,PermissionStatus,} from "expo-ima
 
 The TensorFlow.js model is used within the React Native app to classify images of rubbish directly on the user's device, operating fully offline.
 
-- TensorFlow.js is integrated using the @tensorflow/tfjs-react-native adapter, allowing the machine learning model to run directly on mobile devices without needing internet access.
+- TensorFlow.js is integrated using the `@tensorflow/tfjs-react-native` adapter, allowing the machine learning model to run directly on mobile devices without needing internet access.
 
 - The model is pre-trained and bundled with the app, enabling instant image processing and classification.
 
