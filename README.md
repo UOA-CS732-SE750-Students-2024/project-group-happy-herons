@@ -34,7 +34,7 @@ The code is for testing Express APIs using an in-memory MongoDB database and the
     - **GET /rubbish/:category**: Ensures the correct rubbish items are returned by category.
 
 - **Tools**:
-We're using Postman to conduct API testing. Postman is a powerful tool for testing and managing APIs. It helps verify that individual API endpoints work as expected.
+We're using **Postman** to conduct API testing. Postman is a powerful tool for testing and managing APIs. It helps verify that individual API endpoints work as expected.
 ![image](https://github.com/UOA-CS732-SE750-Students-2024/project-group-happy-herons/assets/144855029/45ea3e4e-491c-4db2-92aa-d3543e0e309a)
 
 
