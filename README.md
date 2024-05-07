@@ -33,6 +33,12 @@ The code is for testing Express APIs using an in-memory MongoDB database and the
     - **GET /recycling/:category**: Checks if the correct recycling items are returned based on the category.
     - **GET /rubbish/:category**: Ensures the correct rubbish items are returned by category.
 
+- **Tools**:
+We're using Postman to conduct API testing. Postman is a powerful tool for testing and managing APIs. It helps verify that individual API endpoints work as expected.
+![image](https://github.com/UOA-CS732-SE750-Students-2024/project-group-happy-herons/assets/144855029/2d321daa-ddab-44b7-96d8-061d5f8815bd)
+
+
+
 ### Testing React-native 'BinScreen.test.js'
 The **'BinScreen.test.js'** file primarily tests the **'BinScreen'** component's behavior to ensure it displays the correct waste bin data. 
 
