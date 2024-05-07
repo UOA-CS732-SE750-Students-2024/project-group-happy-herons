@@ -35,7 +35,7 @@ The code is for testing Express APIs using an in-memory MongoDB database and the
 
 - **Tools**:
 We're using Postman to conduct API testing. Postman is a powerful tool for testing and managing APIs. It helps verify that individual API endpoints work as expected.
-![image](https://github.com/UOA-CS732-SE750-Students-2024/project-group-happy-herons/assets/144855029/2d321daa-ddab-44b7-96d8-061d5f8815bd)
+![image](https://github.com/UOA-CS732-SE750-Students-2024/project-group-happy-herons/assets/144855029/66957eb9-b751-4602-9b7c-9f37b0550b55)
 
 
 
